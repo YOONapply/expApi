@@ -1,9 +1,12 @@
 from flask import Flask, render_template, request, redirect
+from flask_cors import CORS  # CORS 라이브러리 추가
 import json
 import funtionJson as fJ
 import subprocess
 
 app = Flask(__name__)
+CORS(app)  # 모든 엔드포인트에 대해 CORS 허용
+
 
 @app.route("/success", methods=['POST'])
 def success():
